@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Account {
+    char acNo[15];
+    char ifsc[15];
+    char acType[10];
+    double balance;
+};
+
+int main(){
+    int n = 3;
+    struct Account accounts[3] = {
+        {"ACC1001", "IFSC0001", "savings", 150000.0},
+        {"ACC1002", "IFSC0002", "deposit", 450000.0},
+        {"ACC1003", "IFSC0003", "recurring", 1200000.0}
+    };
+    struct Account (*ptr)[3] = &accounts;
+
+    printf("All accounts:\n");
+    for(int i=0;i<n;i++){
+        struct Account *p = &(*ptr)[i];
+        printf("%s %s %s %.2f\n", p->acNo, p->ifsc, p->acType, p->balance);
+    }
+
+    printf("\nHigh balance (> 500,000):\n");
+    for(int i=0;i<n;i++){
+        struct Account *p = &accounts[i];
+        if(p->balance > 500000)
+            printf("%s %.2f\n", p->acNo, p->balance);
+    }
+
+    return 0;
+}
