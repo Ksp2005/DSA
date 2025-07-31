@@ -1,0 +1,8 @@
+#include<stdio.h>
+typedef struct{int id;char name[20];}S;
+int main(){
+    S s={100,"Alice"};
+    S*p=&s;
+    printf("%d %s",p->id,p->name);
+    return 0;
+}
