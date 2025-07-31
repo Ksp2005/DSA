@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+struct College {
+    char name[50];
+    int id;
+};
+
+struct Student2 {
+    char name[30];
+    int roll;
+    float cgpa;
+    struct College clg;
+};
+
+int main() {
+    struct Student2 s2 = {"Dana", 301, 9.1, {"SRM University", 1234}};
+    struct Student2 *ps = &s2;
+
+    printf("Name: %s\nRoll: %d\nCGPA: %.2f\nCollege: %s (ID: %d)\n",
+           ps->name, ps->roll, ps->cgpa,
+           ps->clg.name, ps->clg.id);
+
+    return 0;
+}
