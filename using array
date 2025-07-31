@@ -1,0 +1,8 @@
+#include<stdio.h>
+struct P{int a,b;};
+int main(){
+    struct P arr[3]={{1,2},{3,4},{5,6}};
+    struct P*p=arr;
+    printf("%d %d",(p+2)->a,(p+2)->b);
+    return 0;
+}
