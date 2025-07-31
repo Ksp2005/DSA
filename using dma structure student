@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct student {
+    char name[50];
+    int roll_no;
+    int age;
+};
+
+int main(){
+    int n = 3;
+    struct student *ps = malloc(n * sizeof *ps);
+    if(!ps) return 1;
+
+    strcpy((ps+0)->name, "Bob");
+    (ps+0)->roll_no = 102;
+    (ps+0)->age = 19;
+
+    strcpy((ps+1)->name, "Carol");
+    (ps+1)->roll_no = 103;
+    (ps+1)->age = 21;
+
+    strcpy((ps+2)->name, "Dave");
+    (ps+2)->roll_no = 104;
+    (ps+2)->age = 22;
+
+    for(int i=0;i<n;i++){
+        printf("%s %d %d\n", (ps+i)->name, (ps+i)->roll_no, (ps+i)->age);
+    }
+    free(ps);
+    return 0;
+}
