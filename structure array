@@ -1,0 +1,11 @@
+#include<stdio.h>
+struct I{int x,y;}iarr[5];
+int main(){
+    for(int i=0;i<5;i++){
+        iarr[i].x=i;
+        iarr[i].y=i*i;
+    }
+    for(int i=0;i<5;i++)
+        printf("%d,%d ",iarr[i].x,iarr[i].y);
+    return 0;
+}
