@@ -1,0 +1,9 @@
+#include<stdio.h>
+struct U{int *data;int n;};
+int main(){
+    int a[3]={7,8,9};
+    struct U u={a,3};
+    for(int i=0;i<u.n;i++)
+        printf("%d ",u.data[i]);
+    return 0;
+}
