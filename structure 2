@@ -1,0 +1,7 @@
+#include<stdio.h>
+struct F{float f;}farr[2]={{1.1},{2.2}};
+int main(){
+    struct F *p=&farr[1];
+    printf("%f",p->f);
+    return 0;
+}
