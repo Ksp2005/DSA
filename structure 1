@@ -1,0 +1,8 @@
+#include<stdio.h>
+struct Node{int val;struct Node*next;};
+int main(){
+    struct Node n1={10,NULL},n2={20,&n1};
+    struct Node*p=&n2;
+    printf("%d %d",p->val,p->next->val);
+    return 0;
+}
