@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+struct student {
+    char name[50];
+    int roll_no;
+    int age;
+};
+
+int main(){
+    struct student s;
+    struct student *ps = &s;
+
+    strcpy(ps->name, "Alice");
+    ps->roll_no = 101;
+    ps->age = 20;
+
+    printf("Name:%s Roll:%d Age:%d\n", ps->name, ps->roll_no, ps->age);
+    return 0;
+}
