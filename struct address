@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Address {
+    char street[50];
+    char city[30];
+    int zip;
+};
+
+struct Student {
+    char name[30];
+    int roll_no;
+    struct Address *addr;
+};
+
+int main() {
+    struct Address addr = {"MG Rd", "Coimbatore", 641043};
+    struct Student stu;
+    stu.addr = &addr;
+    strcpy(stu.name, "Charlie");
+    stu.roll_no = 201;
+
+    printf("Name: %s\nRoll: %d\nStreet: %s\nCity: %s\nZIP: %d\n",
+           stu.name, stu.roll_no,
+           stu.addr->street, stu.addr->city, stu.addr->zip);
+
+    return 0;
+}
