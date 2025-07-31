@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct H{char name[10];int age;}*hp;
+int main(){
+    hp=malloc(sizeof *hp);
+    strcpy(hp->name,"Bob");
+    hp->age=30;
+    printf("%s%d",hp->name,hp->age);
+    free(hp);
+    return 0;
+}
