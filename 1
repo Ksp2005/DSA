@@ -1,0 +1,7 @@
+#include<stdio.h>
+struct A{int x,y;}a={1,2};
+int main(){
+    struct A*p=&a;
+    printf("%d %d",p->x,p->y);
+    return 0;
+}
